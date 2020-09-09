@@ -26,6 +26,9 @@ securityContext: {}
 
 service:
   type: ClusterIP
+  tcpEnabled: true
+  udpEnabled: true
+  webEnabled: true
 
 webPort: 9102
 udpPort: 9125

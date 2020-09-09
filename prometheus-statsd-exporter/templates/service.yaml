@@ -7,17 +7,23 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
+    {{- if .Values.service.webEnabled }}
     - name: web
       port: {{ .Values.webPort }}
       protocol: TCP
       targetPort: {{ .Values.webPort }}
+    {{- end }}
+    {{- if .Values.service.udpEnabled }}
     - name: statsd-udp
       port: {{ .Values.udpPort }}
       protocol: UDP
       targetPort: {{ .Values.udpPort }}
+    {{- end }}
+    {{- if .Values.service.tcpEnabled }}
     - name: statsd-tcp
       port: {{ .Values.tcpPort }}
       protocol: TCP
       targetPort: {{ .Values.tcpPort }}
+    {{- end }}
   selector:
     {{- include "prometheus-statsd-exporter.selectorLabels" . | nindent 4 }}
