@@ -24,11 +24,12 @@ podSecurityContext: {}
 
 securityContext: {}
 
-service:
-  type: ClusterIP
+serviceUdp:
+  type: LoadBalanceer
   annotations: 
     service.beta.kubernetes.io/aws-load-balancer-type: nlb
   
+
 webPort: 9102
 udpPort: 9125
 tcpPort: 9125
