@@ -26,6 +26,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
+  annotations: 
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
   
 webPort: 9102
 udpPort: 9125
