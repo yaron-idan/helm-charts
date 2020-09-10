@@ -24,10 +24,9 @@ podSecurityContext: {}
 
 securityContext: {}
 
-serviceUdp:
-  type: LoadBalanceer
-  annotations: 
-    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+service:
+  type: LoadBalancer
+  annotations: {}
   
 
 webPort: 9102
