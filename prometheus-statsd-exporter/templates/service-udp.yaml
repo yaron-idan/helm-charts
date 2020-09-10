@@ -4,12 +4,12 @@ metadata:
   name: {{ include "prometheus-statsd-exporter.fullname" . }}-udp
   labels:
     {{- include "prometheus-statsd-exporter.labels" . | nindent 4 }}
-  {{- if .Values.serviceUdp.annotations }}
+  {{- if .Values.service.annotations }}
   annotations:
-{{ toYaml .Values.serviceUdp.annotations | indent 4 }}
+{{ toYaml .Values.service.annotations | indent 4 }}
     {{- end}}
 spec:
-  type: {{ .Values.serviceUdp.type }}
+  type: {{ .Values.service.type }}
   ports:
     - name: statsd-udp
       port: {{ .Values.udpPort }}
