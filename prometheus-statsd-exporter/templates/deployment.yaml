@@ -41,6 +41,7 @@ spec:
             - --statsd.listen-udp=:{{ .Values.udpPort }}
             - --statsd.listen-tcp=:{{ .Values.tcpPort }}
             - --statsd.mapping-config=/etc/{{ template "prometheus-statsd-exporter.name" . }}/statsd-mapping.conf
+            - --log.level=debug
           ports:
             - name: web
               containerPort: {{ .Values.webPort }}
