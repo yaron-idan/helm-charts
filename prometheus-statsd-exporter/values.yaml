@@ -50,3 +50,8 @@ affinity: {}
 statsdMappingConfig: |-
   defaults:
     timer_type: histogram
+
+serviceMonitor:
+  enabled: true
+  interval: "30s"
+
