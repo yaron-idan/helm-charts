@@ -9,7 +9,7 @@ metadata:
 spec:
   endpoints:
   - interval: {{ .Values.serviceMonitor.interval }}
-    port: 9102
+    port: web
     path: /metrics
   namespaceSelector:
     matchNames:
