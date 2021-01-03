@@ -11,6 +11,9 @@ spec:
   - interval: {{ .Values.serviceMonitor.interval }}
     port: web
     path: /metrics
+    {{- with .Values.serviceMonitor.honorLabels }}
+    honorLabels: {{ . }}
+    {{- end }}
   namespaceSelector:
     matchNames:
     - {{ .Release.Namespace }}

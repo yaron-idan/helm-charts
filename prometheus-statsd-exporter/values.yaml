@@ -54,4 +54,4 @@ statsdMappingConfig: |-
 serviceMonitor:
   enabled: true
   interval: "30s"
-
+  honorLabels: false
